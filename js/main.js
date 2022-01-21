@@ -50,27 +50,6 @@ for (let index = 0; index < names.length; index++) {
 document.getElementById("products").innerHTML = displayHtml;
 document.getElementById("quantity").innerHTML = cart.length;
 
-// var panier = []
-function test(a) {
-    const produitActuel = products[a]
-    panier.push(produitActuel)
-    console.log(panier)
-
-    var table = document.getElementById('cartItems').innerHTML
-
-    table += `
-     <tr>
-      <td>${produitActuel.id}</td>
-      <td>${produitActuel.name}</td>
-      <td>${produitActuel.quantity}</td>
-      <td>${produitActuel.price} $</td>
-      <td><button>Delete</button></td>
-    </tr>
-    `
-    document.getElementById('cartItems').innerHTML = table;
-
-
-}
 
 
 function addingPrices(price, qty) {
@@ -158,8 +137,8 @@ function removeItem(id) {
     cart = cart.filter((element) => element.id != id)
 
     if (products[id].quantity > 1) {
-        products[id].quantity--
-        document.getElementById("prodQ" + products[id].id).innerHTML = products[id].quantity
+        products[id].quantity--;
+        document.getElementById("Quantity" + products[id].id).innerHTML = products[id].quantity;
     } else {
         document.getElementById("prod-" + id).remove()
         document.getElementById("quantity").innerHTML = cart.length;
