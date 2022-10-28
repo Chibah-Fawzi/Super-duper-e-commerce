@@ -45,7 +45,7 @@ for (let index = 0; index < names.length; index++) {
   products.push(product);
 
   /*html */
-  document.getElementById("products").innerHTML += `
+  displayHtml += `
                 <div class="col-4">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top"
@@ -66,6 +66,7 @@ for (let index = 0; index < names.length; index++) {
                 </div>`;
 }
 
+document.getElementById("products").innerHTML = displayHtml;
 document.getElementById("quantity").innerHTML = cart.length;
 
 function addingPrices(price, qty) {
